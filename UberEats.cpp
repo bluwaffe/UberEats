@@ -16,4 +16,7 @@ void Ubereats::definePrimerosPedidos(int primeirosPedidos){
     std::cout<<"O numero de pedidos iniciais e/sao:"<<quantidadePedidos<<std::endl;
 }
 
-void UberEats::novosPedidos
+void UberEats::novosPedidos(int pedidosRecentes){
+  quantidadePedidos +=pedidosRecentes;
+  std::cout<<"A quantidade de pedidos atualizada é de: "<<quantidadePedidos<<std::endl;
+}

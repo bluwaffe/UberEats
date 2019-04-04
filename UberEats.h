@@ -1,16 +1,19 @@
 #ifndef UBEREATS_H
 #define UBEREATS_H
 #include <string>
-using str::string;
+using std::string;
 
 
 class UberEats
 {
 public:
-	UberEats(int);//constructor
-	~UberEats();
-	void definePrimeirosPedidos(int);
-    	void novosPedidos(int);
+	UberEats(int);//constructor1
+    //UberEats();//contructor2
+	~UberEats( );
+    
+	void definePrimeirosPedidos( int );
+    
+    void novosPedidos(int);
 	
 private:
 	int quantidadePedidos;

@@ -13,7 +13,7 @@ public:
     
 	void definePrimeirosPedidos( int );
 	void novosPedidos(int);
-    	void novosPedidos();//sobrecarga_de_metodo
+    	 void novosPedidos();//sobrecarga_de_metodo
 
 	
 private:

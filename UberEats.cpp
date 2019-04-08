@@ -9,6 +9,10 @@ UberEats::UberEats(int primeirosPedidos)
 {
   definePrimeirosPedidos(primeirosPedidos);
 }
+UberEats::UberEats()
+{
+  definePrimeirosPedidos();
+}
 
 UberEats::~UberEats()
 {

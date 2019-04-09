@@ -11,7 +11,15 @@ UberEats::UberEats(int primeirosPedidos)
 }
 UberEats::UberEats()
 {
-  definePrimeirosPedidos();
+  definePrimeirosPedidos(1);
+}
+
+UberEats::UberEats(const UberEats &p)
+{
+    quantidadePedidos = p.quantidadePedidos;
+    quantidadeDeEntregadores = p.quantidadeDeEntregadores;
+    tipoDeComida = p.tipoDeComida;
+    modoDepreparo = p.modoDepreparo;
 }
 
 UberEats::~UberEats()
@@ -32,6 +40,9 @@ void UberEats::novosPedidos(int pedidosRecentes)
   quantidadePedidos += pedidosRecentes;
   std::cout<<"A quantidade de pedidos atualizada é de: "<<quantidadePedidos<<std::endl;
 }
+/*void menssage(const string &msg) const{
+    cout
+}*/
 
 void UberEats::novosPedidos()
 {

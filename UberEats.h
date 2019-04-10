@@ -7,7 +7,7 @@ using std::string;
 class UberEats
 {
 public:
-	UberEats(int);//constructor1
+	UberEats(int, int, string &);//constructor1
     	UberEats();//contructor2_Sobrecarregado
             UberEats(const UberEats &);//construtor3_de_copia
             
@@ -18,7 +18,7 @@ public:
 	
 	void defineEntregadoresDisponiveis(int);
 	void printEntregadoresDisponiveis() const;
-	void defineTipoPedido(string & );
+	void defineTipoPedido(string &);
 	void printTipoPedido( ) const;
 	void menssage() const;
 	

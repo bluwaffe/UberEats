@@ -7,13 +7,24 @@ using std::endl;
 using std::string;
 
 
-int main(int argc, char **argv)
+int main()
 {
 
-UberEats entregadorComida(30);
+    string tipoPedido;
+    
+    cout<<"digite o tipo do seu pedido"<<endl;
+        getline(cin, tipoPedido);
+        
+UberEats entregadorComida(10 , 4 , tipoPedido );
 
 entregadorComida.novosPedidos(25);
 entregadorComida.novosPedidos();
+
+UberEats entregadorComidacopy(entregadorComida);//copia
+    entregadorComidacopy.entregadoresDisponiveis();
+    entregadorComidacopy.printTipoPedido();
+    entregadorComidacopy.menssage();
+    
 
 return 0;
 }

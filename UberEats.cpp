@@ -3,11 +3,11 @@
 #include <string>
 using std::cout;
 using std::endl;
-using std cin;
+using std::cin;
 using std::string;
 
 
-UberEats::UberEats(int primeirosPedidos, int entregadores, string &tipo,  )
+UberEats::UberEats(int primeirosPedidos, int entregadores, string &tipo)
 {
 	definePrimeirosPedidos(primeirosPedidos);
 	defineEntregadoresDisponiveis(entregadores);

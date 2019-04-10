@@ -15,16 +15,18 @@ public:
     
 	void definePrimeirosPedidos( int );
 	void novosPedidos(int);
-    void menssage( ) const;
-   void novosPedidos();//sobrecarga_de_metodo
-    
+	
+	void mostratipoPedido( ) const;
+	
+	void novosPedidos();//sobrecarga_de_metodo
+
 
 	
 private:
-	int quantidadePedidos;
-    int quantidadeDeEntregadores;
-    string tipoDeComida;
-    string modoDepreparo;
+	int quantidaPedidos;
+    int quantidadeEntregadores;
+	int entregadoresDisponiveis;
+    string tipoPedido;
     
 };
 

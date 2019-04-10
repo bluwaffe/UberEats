@@ -16,7 +16,11 @@ public:
 	void definePrimeirosPedidos( int );
 	void novosPedidos(int);
 	
-	void mostratipoPedido( ) const;
+	void defineEntregadoresDisponiveis(int);
+	void printEntregadoresDisponiveis() const;
+	void defineTipoPedido(string & );
+	void printTipoPedido( ) const;
+	void menssage() const;
 	
 	void novosPedidos();//sobrecarga_de_metodo
 

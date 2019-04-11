@@ -29,7 +29,6 @@ entregadoresDisponiveis = p.entregadoresDisponiveis;
 	
 UberEats::defineTipoPedido(string &tipo)
 {
-		
 	tipoPedido = tipo;
 	
 	
@@ -82,3 +81,10 @@ void UberEats::novosPedidos()
 {
   quantidaPedidos++;
 }
+
+UberEats::printNumeroClientes()
+{
+    cout<<"O número de cliente é: "<<numerosClientes<<endl;
+}
+
+

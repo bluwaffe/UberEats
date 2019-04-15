@@ -25,6 +25,7 @@ UberEats entregadorComidacopy(entregadorComida);//copia
     entregadorComidacopy.printTipoPedido();
     entregadorComidacopy.menssage();
     
+    UberEats::defineNumeroClientes(numerosClientes);//metodo static
 
 return 0;
 }

@@ -6,6 +6,8 @@ using std::endl;
 using std::cin;
 using std::string;
 
+int UberEats::numerosClientes = 10;//static
+const int UberEats::numeroRestaurantes = 60;//static const
 
 UberEats::UberEats(int primeirosPedidos, int entregadores, string &tipo)
 {

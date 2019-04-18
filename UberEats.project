@@ -98,5 +98,7 @@
     <File Name="UberEats.cpp"/>
     <File Name="pedidos.h"/>
     <File Name="pedidos.cpp"/>
+    <File Name="Clientes.h"/>
+    <File Name="Clientes.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

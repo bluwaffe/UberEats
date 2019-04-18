@@ -26,7 +26,7 @@ UberEats::UberEats(const UberEats &p)//copia_construct
     quantidaPedidos = p.quantidaPedidos;
     quantidadeEntregadores = p.quantidadeEntregadores;
     tipoPedido = p.tipoPedido;
-entregadoresDisponiveis = p.entregadoresDisponiveis;
+    entregadoresDisponiveis = p.entregadoresDisponiveis;
 	
 	
 UberEats::defineTipoPedido(string &tipo)
@@ -39,7 +39,7 @@ UberEats::defineTipoPedido(string &tipo)
 
 UberEats::defineEntregadoresDisponiveis()
 {
-	entregadoresDisponiveis = entregadores;
+	//entregadoresDisponiveis = entregadores;
 	
 	printEntregadoresDisponiveis();
 }
@@ -51,7 +51,7 @@ UberEats::message() const
 
 UberEats::printEntregadoresDisponiveis() const
 {
-	cout<<"A quantidade de entregadores disponiveis é de : " entregadoresDisponiveis<<endl;
+	cout<<"A quantidade de entregadores disponiveis é de : " entregadoresDisponiveis <<endl;
 }
 
 UberEats::printTipopedido() const

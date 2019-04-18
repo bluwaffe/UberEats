@@ -1,7 +1,9 @@
 #ifndef PEDIDOS_H
 #define PEDIDOS_H
+#include <string>
 #include <iostream>
-using std::cot;
+using std::string;
+using std::cout;
 using std::cin;
 using std::endl;
 
@@ -16,7 +18,7 @@ public:
 private:
 	
 	const static int numeroFormasPagamento = 3;
-	string formasDePagamento[numeroFormasDePagamento];
+	string formasDePagamento[numeroFormasPagamento];
 
 };
 

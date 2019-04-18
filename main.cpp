@@ -13,18 +13,18 @@ int main()
     string tipoPedido;
     
     cout<<"digite o tipo do seu pedido"<<endl;
-        getline(cin, tipoPedido);
-        
+    getline(cin, tipoPedido);
+
 UberEats entregadorComida(10 , 4 , tipoPedido );
 
 entregadorComida.novosPedidos(25);
 entregadorComida.novosPedidos();
 
 UberEats entregadorComidacopy(entregadorComida);//copia
-    entregadorComidacopy.entregadoresDisponiveis();
+    //entregadorComidacopy.entregadoresDisponiveis();
     entregadorComidacopy.printTipoPedido();
     entregadorComidacopy.menssage();
-    
+
     UberEats::defineNumeroClientes(numerosClientes);//metodo static
 
 return 0;

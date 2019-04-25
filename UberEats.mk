@@ -5,21 +5,20 @@
 ## Debug
 ProjectName            :=UberEats
 ConfigurationName      :=Debug
+WorkspacePath          :=C:/Users/KURUMI.LAB4-PC11/Pictures/blu/Comidas
+ProjectPath            :=C:/Users/KURUMI.LAB4-PC11/Pictures/blu/Comidas/UberEats
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
-WorkspacePath          := "C:\Users\User\Documents\Facul\programação\Programação 2\Repositórios\Comidas"
-ProjectPath            := "C:\Users\User\Documents\Facul\programação\Programação 2\Repositórios\Comidas\UberEats"
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=User
-Date                   :=18/04/2019
-CodeLitePath           :="C:\Program Files (x86)\CodeLite"
-LinkerName             :=g++
-ArchiveTool            :=ar rcu
-SharedObjectLinkerName :=g++ -shared -fPIC
+User                   :=KURUMI
+Date                   :=24/04/2019
+CodeLitePath           :="C:/Program Files/CodeLite"
+LinkerName             :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
+SharedObjectLinkerName :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe" -shared -fPIC
 ObjectSuffix           :=.o
-DependSuffix           :=
+DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
 DebugSwitch            :=-g 
 IncludeSwitch          :=-I
@@ -28,47 +27,62 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-CompilerName           :=g++
-C_CompilerName         :=gcc
 OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="C:\Users\User\Documents\Facul\programação\Programação 2\Repositórios\Comidas\UberEats\UberEats.txt"
+ObjectsFileList        :="UberEats.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
-CmpOptions             := -g -O0 -Wall $(Preprocessors)
-C_CmpOptions           := -g -O0 -Wall $(Preprocessors)
+RcCmpOptions           := 
+RcCompilerName         :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/windres.exe"
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := 
+ArLibs                 :=  
 LibPath                := $(LibraryPathSwitch). 
+
+##
+## Common variables
+## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
+##
+AR       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/ar.exe" rcu
+CXX      := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
+CC       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/gcc.exe"
+CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
+ASFLAGS  := 
+AS       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/as.exe"
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files (x86)\CodeLite
-WXWIN:=C:\wxWidgets-2.9.2
-PATH:=$(WXWIN)\lib\gcc_dll;$(PATH)
-WXCFG:=gcc_dll\mswu
-UNIT_TEST_PP_SRC_DIR:=C:\UnitTest++-1.3
-Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/UberEats$(ObjectSuffix) $(IntermediateDirectory)/pedidos$(ObjectSuffix) $(IntermediateDirectory)/Clientes$(ObjectSuffix) 
+CodeLiteDir:=C:\Program Files\CodeLite
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/UberEats.cpp$(ObjectSuffix) $(IntermediateDirectory)/pedidos.cpp$(ObjectSuffix) $(IntermediateDirectory)/Clientes.cpp$(ObjectSuffix) 
+
+
+
+Objects=$(Objects0) 
 
 ##
 ## Main Build Targets 
 ##
-.PHONY: all clean PreBuild PrePreBuild PostBuild
+.PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
 all: $(OutputFile)
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
 	@$(MakeDirCommand) $(@D)
 	@echo "" > $(IntermediateDirectory)/.d
-	@echo $(Objects) > $(ObjectsFileList)
+	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
+
+MakeIntermediateDirs:
+	@$(MakeDirCommand) "./Debug"
+
 
 $(IntermediateDirectory)/.d:
 	@$(MakeDirCommand) "./Debug"
@@ -79,44 +93,44 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main$(ObjectSuffix): main.cpp 
-	$(CompilerName) $(IncludePCH) $(SourceSwitch) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/main.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/main$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main$(PreprocessSuffix): main.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main$(PreprocessSuffix) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/main.cpp"
+$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/KURUMI.LAB4-PC11/Pictures/blu/Comidas/UberEats/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
-$(IntermediateDirectory)/UberEats$(ObjectSuffix): UberEats.cpp 
-	$(CompilerName) $(IncludePCH) $(SourceSwitch) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/UberEats.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/UberEats$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/UberEats$(PreprocessSuffix): UberEats.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/UberEats$(PreprocessSuffix) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/UberEats.cpp"
+$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix)main.cpp
 
-$(IntermediateDirectory)/pedidos$(ObjectSuffix): pedidos.cpp 
-	$(CompilerName) $(IncludePCH) $(SourceSwitch) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/pedidos.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/pedidos$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/pedidos$(PreprocessSuffix): pedidos.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/pedidos$(PreprocessSuffix) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/pedidos.cpp"
+$(IntermediateDirectory)/UberEats.cpp$(ObjectSuffix): UberEats.cpp $(IntermediateDirectory)/UberEats.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/KURUMI.LAB4-PC11/Pictures/blu/Comidas/UberEats/UberEats.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/UberEats.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/UberEats.cpp$(DependSuffix): UberEats.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/UberEats.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/UberEats.cpp$(DependSuffix) -MM UberEats.cpp
 
-$(IntermediateDirectory)/Clientes$(ObjectSuffix): Clientes.cpp 
-	$(CompilerName) $(IncludePCH) $(SourceSwitch) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/Clientes.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/Clientes$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Clientes$(PreprocessSuffix): Clientes.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Clientes$(PreprocessSuffix) "C:/Users/User/Documents/Facul/programação/Programação 2/Repositórios/Comidas/UberEats/Clientes.cpp"
+$(IntermediateDirectory)/UberEats.cpp$(PreprocessSuffix): UberEats.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/UberEats.cpp$(PreprocessSuffix)UberEats.cpp
 
+$(IntermediateDirectory)/pedidos.cpp$(ObjectSuffix): pedidos.cpp $(IntermediateDirectory)/pedidos.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/KURUMI.LAB4-PC11/Pictures/blu/Comidas/UberEats/pedidos.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/pedidos.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/pedidos.cpp$(DependSuffix): pedidos.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/pedidos.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/pedidos.cpp$(DependSuffix) -MM pedidos.cpp
+
+$(IntermediateDirectory)/pedidos.cpp$(PreprocessSuffix): pedidos.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/pedidos.cpp$(PreprocessSuffix)pedidos.cpp
+
+$(IntermediateDirectory)/Clientes.cpp$(ObjectSuffix): Clientes.cpp $(IntermediateDirectory)/Clientes.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/KURUMI.LAB4-PC11/Pictures/blu/Comidas/UberEats/Clientes.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Clientes.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Clientes.cpp$(DependSuffix): Clientes.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Clientes.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Clientes.cpp$(DependSuffix) -MM Clientes.cpp
+
+$(IntermediateDirectory)/Clientes.cpp$(PreprocessSuffix): Clientes.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Clientes.cpp$(PreprocessSuffix)Clientes.cpp
+
+
+-include $(IntermediateDirectory)/*$(DependSuffix)
 ##
 ## Clean
 ##
 clean:
-	$(RM) $(IntermediateDirectory)/main$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/main$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/main$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/UberEats$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/UberEats$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/UberEats$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/pedidos$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/pedidos$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/pedidos$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/Clientes$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/Clientes$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/Clientes$(PreprocessSuffix)
-	$(RM) $(OutputFile)
-	$(RM) $(OutputFile).exe
-	$(RM) "C:\Users\User\Documents\Facul\programação\Programação 2\Repositórios\Comidas\.build-debug\UberEats"
+	$(RM) -r ./Debug/
 
 

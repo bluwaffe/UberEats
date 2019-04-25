@@ -18,10 +18,7 @@ UberEats::UberEats(int primeirosPedidos, int entregadores, string &tipo)
 
 UberEats::UberEats()
 {
-  definePrimeirosPedidos(1);
-}
-
-UberEats::UberEats(const UberEats &p)//copia_construct
+  definePrimeirosPediUberEats::UberEats(const UberEats &p)//copia_construct
 {
     quantidaPedidos = p.quantidaPedidos;
     quantidadeEntregadores = p.quantidadeEntregadores;
@@ -29,7 +26,7 @@ UberEats::UberEats(const UberEats &p)//copia_construct
     entregadoresDisponiveis = p.entregadoresDisponiveis;
 	
 	
-UberEats::defineTipoPedido(string &tipo)
+void UberEats::defineTipoPedido(string &tipo)
 {
 	tipoPedido = tipo;
 	
@@ -37,24 +34,24 @@ UberEats::defineTipoPedido(string &tipo)
 	printTipoPedido();
 }
 
-UberEats::defineEntregadoresDisponiveis()
+void UberEats::defineEntregadoresDisponiveis()
 {
 	//entregadoresDisponiveis = entregadores;
 	
 	printEntregadoresDisponiveis();
 }
 
-UberEats::message() const
+void UberEats::message() const
 {
 	cout<<"Os dados Foram carregados"<<endl;
 }
 
-UberEats::printEntregadoresDisponiveis() const
+void UberEats::printEntregadoresDisponiveis() const
 {
 	cout<<"A quantidade de entregadores disponiveis é de : " entregadoresDisponiveis <<endl;
 }
 
-UberEats::printTipopedido() const
+void UberEats::printTipopedido() const
 {
 cout<<" O tipo do pedido é: " tipoPedido <<endl;
 }
@@ -84,7 +81,7 @@ void UberEats::novosPedidos()
   quantidaPedidos++;
 }
 
-UberEats::printNumeroClientes()
+void UberEats::printNumeroClientes()
 {
     cout<<"O número de cliente é: "<<numerosClientes<<endl;
 }

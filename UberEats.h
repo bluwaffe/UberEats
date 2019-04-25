@@ -32,7 +32,7 @@ private:
     string tipoPedido;
     static int numerosClientes;
     static const int numeroRestaurantes;
-    const int numeroMochilastermicas;
+    const int numeroMochilastermicas = 5;
 };
 
 
